@@ -1,0 +1,36 @@
+.list-hover1 > li > a{
+	position: relative;
+	
+	& > span{
+		position: relative;
+		
+		&:after{
+			content: "";
+			position: absolute;
+			right: -1px;
+			bottom: 0;
+			height: 1px;
+			width: 0;
+			background-color: var(--bs-primary);
+			transition: all 0.3s linear;
+			-webkit-transition: all 0.3s linear;
+			-moz-transition: all 0.3s linear;
+			-o-transition: all 0.3s linear;
+		}
+	}
+	&:hover,
+	&.active{
+		& > span{
+			&:after{
+				width: 100%;
+				transform-origin: right;
+				-moz-transform-origin: right;
+				-webkit-transform-origin: right;
+				-ms-transform-origin: right;
+				-o-transform-origin: right;
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+}

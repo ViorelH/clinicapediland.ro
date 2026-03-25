@@ -1,0 +1,27 @@
+[data-typography="typography_1"] {
+	--font-family-base: "Montserrat";
+    --font-family-title: "Montserrat";
+    --bs-body-font-family: "Montserrat";
+}
+[data-typography="typography_2"] {
+	--font-family-base: "Montserrat";
+    --font-family-title: "Libre Baskerville";
+    --bs-body-font-family: "Poppins";
+
+    .btn{
+        --bs-btn-border-radius:10px ; 
+    }
+}
+
+[data-typography="typography_3"] {
+	--font-family-base: "DM Sans";
+    --font-family-title: "DM Sans";
+    --bs-body-font-family: "DM Sans";
+
+    ::selection {
+        color: #000;
+        background: var(--bs-primary);
+    }
+}
+
+

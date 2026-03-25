@@ -1,0 +1,674 @@
+
+.testimonial-wrapper1 {
+	margin-left: -55px;
+	margin-right: -55px;
+
+	@include respond("laptop"){
+		margin: 0;
+	}
+	.swiper-slide{
+		padding: 10px;
+	}
+	
+	&::after{
+		content: "";
+		background: #fff;
+		box-shadow: 0 90px 0 -70px rgba(255, 255, 255, 0.4), 0 40px 0 -30px rgba(255, 255, 255, 0.6);
+		position: absolute;
+		width: 100%;
+		height: calc(100% - 20px);
+		left: 0;
+		top: 0;
+		border-radius: 60px;
+
+
+		@include respond("phone"){
+			border-radius: 30px;
+		}
+	}
+
+	.testimonial-info{
+		.testimonial-name{
+			color: var(--bs-primary);
+		}
+		.testimonial-position{
+			color: #816E6E;
+		}
+	}
+
+
+
+	.swiper-pagination{
+		left: 60px !important;
+		bottom: 60px !important;
+		width: auto;
+		position: absolute;
+
+
+		@include respond("tab-land"){
+			bottom: 50px !important;
+		}
+		@include respond("tab-port"){
+			bottom: 0px !important;
+        	left: 50% !important;
+        	transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.testimonial-1{
+	display: flex;
+    position: relative;
+	z-index:1;
+	gap: 20px;
+	height: 100%;
+	
+	.testimonial-media{
+		width: 420px;
+		min-width: 420px;
+		height: 415px;
+		border-radius: 15px;
+		position: relative;
+		
+		img{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 15px 15px 150px 15px;
+		}
+		.item1{
+			position: absolute;
+			bottom: 10%;
+			left: -13%;
+			
+			.info-widget{
+				width: 230px;
+				background-color: #fff;
+				border-radius: 15px;
+				padding: 18px 25px;
+				box-shadow: 0 20px 50px rgba(var(--bs-secondary-rgb), 0.1);
+
+				.star-list{
+					gap: 3px;
+					margin-bottom: 3px;
+
+					li i{
+						color: #FFBE17;
+						font-size: 20px;
+					}
+				}
+				.title{
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	.testimonial-detail{
+		padding: 30px 50px 30px 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: flex-start;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		background: transparent;
+		border-radius: 15px;
+
+		.testimonial-text{
+			position: relative;
+			z-index: 1;
+		}	
+		.title{
+			font-size: 18px;
+			margin-bottom: 0;
+		}
+		p{
+			line-height: 1.7;
+			font-size: 24px;
+			color: var(--bs-secondary);
+			margin-top: 50px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		&::after{
+			content: "\f106";
+			font-family: 'flaticon';
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-weight: 500;
+			font-size: 65px;
+			line-height: 65px;
+			color: var(--bs-primary);
+		}
+		.star-list li {
+			color: #FFCD37;
+		}
+	}
+	.testimonial-contant{
+	    margin-bottom: 35px;
+	}
+	.testimonial-head{
+		display: flex;
+		gap: 15px;
+		margin-bottom: 12px;
+	}
+	.testimonial-info{
+		display: flex;
+		align-items: center;
+		gap: 12px;
+
+		.testimonial-name{
+			font-size: 24px;
+			margin-bottom: 3px;
+		}
+		.testimonial-position{
+			font-size: 16px;
+		}
+	}
+	@include respond('tab-land'){
+		.testimonial-media{
+			width: 320px;
+			min-width: 320px;
+			height: 315px;
+		}
+		.testimonial-detail p{
+			font-size: 18px;
+		}
+		.testimonial-info{
+			.testimonial-name {
+				font-size: 18px;
+			}
+			.testimonial-position {
+				font-size: 14px;
+			}
+		}
+	}
+	@include respond('tab-port'){
+		.testimonial-detail{
+			padding: 40px 30px 20px 0px;
+			
+			&::after {
+				font-size: 50px;
+				line-height: 50px;			
+			}
+			p {
+				font-size: 16px;
+				margin-top: 20px;
+			}
+		}
+		.testimonial-media{
+			width: 250px;
+			min-width: 250px;
+			height: 255px;
+			
+			img {
+				border-radius: 15px 15px 100px 15px;
+			}
+			.item1{
+				.info-widget .title {
+					font-size: 14px;
+				}
+				.info-widget .star-list li i{
+					font-size: 15px;
+				}
+				.info-widget {
+					width: 180px;
+					padding: 15px 20px;
+				}
+			}
+		}
+		.testimonial-contant {
+			margin-bottom: 20px;
+		}
+	}
+	@include respond('phone-land'){
+		.testimonial-media{
+			width: 215px;
+			min-width: 215px;
+			height: 225px;
+			
+			.item1{
+				bottom: 10px;
+				left: 10px;
+				right: 10px;
+				
+				.info-widget {
+					width: 100%;
+					padding: 10px 15px 12px;
+					
+					.star-list li i {
+						font-size: 12px;
+					}
+					.title {
+						font-size: 13px;
+					}
+				}
+			}
+			img {
+				border-radius: 15px;
+			}
+		}
+		.testimonial-detail{
+			padding: 40px 0px 15px 0px;
+			
+			&::after {
+				font-size: 40px;
+				line-height: 40px;
+			}
+			p {
+				font-size: 15px;
+				margin-top: 10px;
+			}
+		}
+		.testimonial-info{
+			.testimonial-name {
+				font-size: 15px;
+			}
+			.testimonial-position {
+				font-size: 13px;
+			}
+		}
+		.testimonial-contant{
+			margin-bottom: 15px;
+		}
+	}
+	@include respond('phone-land'){
+		flex-direction: column-reverse;
+		
+		.testimonial-media {
+			width: 100%;
+			min-width: 100%;
+			height: 300px;
+			
+			.item1 .info-widget {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+.testimonial-1{
+	padding: 50px;
+	@include respond("tab-land"){
+		padding: 40px;
+	}
+
+	@include respond("tab-port"){
+		padding: 20px;
+	}
+	
+	.testimonial-contant{
+		margin-bottom: 25px;
+
+		@include respond("tab-port"){
+			margin-bottom: 15px;
+		}
+	}
+	.testimonial-media{
+		z-index: 1;
+
+		img{
+			border-radius: 20px;
+		}
+	}
+	.testimonial-detail{
+		&::after {
+			top: 10px;
+
+			@include respond("tab-port"){
+				top: 0;
+				font-size: 45px;
+				line-height: 45px;
+			}
+		}
+		p:last-child{
+			margin-top: 60px;
+   			max-width: 660px;
+
+			@include respond("tab-port"){
+				margin-top: 20px;
+			}
+		}
+		.testimonial-media{
+			.item1{
+				bottom: 14%;
+			}
+		}
+	}
+}
+
+.testimonial-2{
+	position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 110px 60px 50px 60px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+	
+	.title{
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+	p{
+		line-height: 1.7;
+		font-size: 20px;
+		color: var(--bs-secondary);
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&::after{
+		content: "\f106";
+		font-family: 'flaticon';
+		position: absolute;
+		left: 60px;
+		top: 30px;
+		font-weight: 500;
+		font-size: 65px;
+		line-height: 65px;
+		color: var(--bs-primary);
+	}
+	
+	.testimonial-detail{
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		.dz-media{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+
+			img{
+				border-radius: 50%;
+			}
+		}
+		.testimonial-rating{
+			margin-left: auto;
+
+			ul li i{
+				font-size: 22px;
+				color: #FFCD37;
+			}
+			@include respond("phone"){
+				display: none;
+			}
+		}
+	}
+
+	.testimonial-text{
+	    margin-bottom: 30px;
+	}
+	.testimonial-name{
+		font-size: 20px;
+		margin-bottom: 3px;
+	}
+	.testimonial-position{
+		font-size: 16px;
+	}
+	@include respond('tab-land'){
+		padding: 90px 35px 35px 35px;
+		
+		p{
+			font-size: 18px;
+		}
+		&::after{
+			left: 35px;
+			top: 25px;
+			font-size: 50px;
+			line-height: 50px;
+		}
+		.testimonial-text{
+			margin-bottom: 20px;
+		}
+		.testimonial-name{
+			font-size: 18px;
+		}
+	}
+	@include respond('phone'){
+		padding: 75px 25px 25px 25px;
+		
+		p{
+			font-size: 16px;
+		}
+		&::after{
+			left: 25px;
+			top: 18px;
+			font-size: 45px;
+			line-height: 45px;
+		}
+		.testimonial-name{
+			font-size: 16px;
+		}
+	}
+}
+
+.testimonial-3{
+	background-color: #fff;
+	padding: 20px;
+	border-radius: var(--radius-md);
+	box-shadow: 0 0 20px rgba(var(--bs-secondary-rgb), 0.02);
+	@include transitionFast;
+	
+	&:hover{
+		transform: translateY(-5px);
+	}
+	@include respond('phone'){
+		padding: 15px;
+	}
+	.video-btn{
+		position: absolute;
+		text-align: center;
+		display: inline-block;
+		height: 80px;
+		width: 80px;
+		min-width: 80px;
+		line-height: 80px;
+		font-size: 30px;
+		background-color: #fff;
+		color: var(--bs-secondary);
+		border-radius: 50%;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			#{$dz-pos-left}: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			background-color: rgba(255, 255, 255, 0.2);
+			z-index: -1;
+			-moz-transition:all 0.5;
+			-o-transition:all 0.5;
+			-webkit-transition:all 0.5;
+			-ms-transition:all 0.5;
+			transition:all 0.5;
+			border-radius: 50%;
+		}
+		&:before{
+			animation: animationSignal1;
+			animation-iteration-count: infinite;
+			animation-duration: 3s;
+			-webkit-animation: animationSignal1;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-duration: 3s;
+			transform:  scale(1);
+			-moz-transform: scale(1);
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-o-transform: scale(1);
+		}
+		&:after{
+			animation: animationSignal2;
+			animation-iteration-count: infinite;
+			animation-duration: 3s;
+			-webkit-animation: animationSignal2;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-duration: 3s;
+			transform:  scale(1);
+			-moz-transform:  scale(1);
+			-webkit-transform:  scale(1);
+			-ms-transform:  scale(1);
+			-o-transform:  scale(1);
+		}
+		@include respond('tab-port'){
+			height: 60px;
+			width: 60px;
+			min-width: 60px;
+			line-height: 60px;
+			font-size: 20px;
+		}
+	}
+	.testimonial-media{
+		margin-bottom: 20px;
+		height: 280px;
+		position: relative;
+		
+		img{
+			border-radius: var(--radius-md);
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+		@include respond('tab-port'){
+			height: 215px;
+		}
+		@include respond('phone'){
+			margin-bottom: 15px;
+		}
+	}
+	.testimonial-detail{
+		display:flex ;
+		align-items: center;
+		gap: 15px;
+		position: relative;
+		padding-right: 100px;
+		
+		.dz-media{
+			width: 60px;
+			min-width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			
+			img{
+				border-radius: 50%;
+			}
+			@include respond('phone'){
+				width: 50px;
+				min-width: 50px;
+				height: 50px;
+			}
+		}
+		.testimonial-name{
+			margin-bottom: 0;
+			font-size: 18px;
+		}
+		.testimonial-position{
+			font-size: 14px;
+		}
+		&::after {
+			content: "\f105";
+			font-family: 'flaticon';
+			position: absolute;
+			right: 15px;
+			top: 0;
+			font-weight: 500;
+			font-size: 65px;
+			line-height: 65px;
+			color: var(--bs-primary);
+		}
+		@include respond('tab-port'){
+			padding-right: 70px;
+			
+			.testimonial-name {
+				font-size: 16px;
+			}
+			&::after{
+				right: 0;
+				top: -3px;
+				font-size: 48px;
+				line-height: 48px;
+			}
+		}
+		@include respond('phone'){
+			gap: 10px;
+		}
+	}
+}
+
+.dzThumbPreview{
+	.testimonial-pagination-swiper{
+		@include respond("tab-port"){
+			display: none;
+		}
+	}
+}
+.dzThumbSlider{
+	overflow: unset;
+	margin-bottom:30px;
+	img {
+		transition:all 0.5s;
+	}
+	.swiper-slide-thumb-active img {
+		transform:scale(1.1);
+		box-shadow: 0 0 10px 10px rgba(0, 0, 0, .0);
+		border-radius: 8px;
+		
+	}
+	&:after {
+		top: 100%;
+		content: "";
+		width: 700px;
+		height: 250px;
+		background: #fffcf8;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		filter: blur(50px);
+		border-radius: 100%;
+		pointer-events: none;
+
+		@include respond("tab-land"){
+			height: 200px;
+		}
+		@include respond("phone"){
+			height: 130px;
+		}
+	}
+}
+
+@keyframes move7 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0); 
+}
+  25% {
+    -webkit-transform: translate(-15px, -15px);
+    transform: translate(-15px, -15px); 
+}
+  50% {
+    -webkit-transform: translate(-8px, -8px);
+    transform: translate(-8px, -8px); 
+}
+  75% {
+    -webkit-transform: translate(-15px, 8px);
+    transform: translate(-15px, 8px); 
+}
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0); 
+} 
+}

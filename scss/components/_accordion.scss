@@ -1,0 +1,81 @@
+// dz-accordion
+.dz-accordion{
+	.accordion-button{
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1.35;
+		padding-right: calc(var(--bs-accordion-btn-padding-x) - 5px);
+		color: var(--bs-secondary);
+		
+		&::after{
+			background-image: none;
+			content: "\e844";
+			font-family: 'feather';
+			font-size: 20px;
+			line-height: 20px;
+			width: 20px;
+			height: 20px;
+		}
+		@include respond('tab-land'){
+			font-size: 16px;
+		}
+	}
+	&.style-1{
+		.accordion-item{
+			background-color: transparent;
+			border: 0;
+			
+			&:last-child{
+				border-radius: 0;
+			}
+			.accordion-button{
+				background-color: transparent;
+				padding: 23px 0px 23px 0px;
+				color: var(--bs-secondary);
+				box-shadow: none;
+				border-radius: 0 !important;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				
+				&.collapsed::after{
+					opacity: 0.3;
+				}
+				&:not(.collapsed)::after{
+					color: var(--bs-primary);
+				}
+			}
+			.accordion-body{
+				padding: 15px 0px 25px 0px;
+				
+				p:last-child{
+					margin-bottom: 0;
+				}
+			}
+			.accordion-collapse{
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				
+				&::before{
+					content: "";
+					display: block;
+					height: 8px;
+				}
+			}
+			@include respond('phone'){
+				.accordion-button{
+					padding: 18px 0px 18px 0px;
+				}
+			}
+		}
+	}
+}
+.accordion{
+	@include respond('phone'){
+		--bs-accordion-body-padding-x: 20px;
+		--bs-accordion-body-padding-y: 20px;
+		--bs-accordion-btn-padding-x: 20px;
+		--bs-accordion-btn-padding-y: 15px;
+	}
+}
+
+.accordion-button:focus{
+	box-shadow: none !important;
+}

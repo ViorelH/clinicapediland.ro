@@ -1,0 +1,822 @@
+.pricingtable-features {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+	li {
+		padding: 12px;
+		i{
+			margin: 0 3px;
+		}
+	}
+}
+
+.dz-pricingtable{
+	padding:70px 0 70px;
+	
+	@include respond ("tab-port"){
+		padding:40px 0 40px;
+		.pricingtable-wraper{
+			justify-content:center;
+		}
+	}
+	@include respond ("phone-land"){
+		padding:40px 0 10px;
+	}
+}
+.pricingtable-wrapper{
+	overflow: hidden;
+	@include transitionFast;
+	
+	&.style-1{
+		position: relative;
+		z-index: 1;
+		border-radius: 15px;
+		background: #fff;
+		height: 100%;
+		
+		.left-box{
+			width: 50%;
+			padding: 30px;
+		}
+		.right-box{
+			padding: 30px;
+			position: relative;
+			z-index: 1;
+			border-left: 1px solid rgba(0, 0, 0, 0.1);
+			width: calc(50% + 30px);
+			display: flex;
+			flex-direction: column;
+		}		
+		
+		.pricingtable-inner{
+			display: flex;
+			text-align: left;
+			height: 100%;
+			
+			.pricingtable-title{
+				margin-bottom: 15px;
+				
+				.title{
+					font-size: 18px;
+					font-weight: 600;
+					padding-bottom: 10px;
+					position: relative;
+					margin-bottom: 12px;
+					
+					&::after{
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						height: 1px;
+						background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 50%, rgba(255, 255, 255, 0) 0%);
+						background-size: 10px 1px;
+						background-repeat: repeat-x;
+					}
+				}
+				.text{
+					margin-bottom: 0;
+                    color: var(--bs-heading-color);
+				}
+			}
+			.pricingtable-bx{
+				font-size: 50px;
+				font-weight: 600;
+				margin: 0;
+				line-height: 1.2;
+				
+				small{
+					font-size: 16px;
+					font-weight: 500;
+					color: var(--bs-primary);
+					margin-left: 5px;
+					transform: translateY(-2px);
+					display: inline-block;
+				}
+			}
+			p{
+			    font-size: 14px;
+				font-weight: 300;
+			}
+			.pricingtable-list{	
+				.list-title{
+					font-size: 18px;
+					margin-bottom: 10px;
+				}
+				.pricingtable-features{
+					text-align: $dz-pos-left;
+					list-style: none;
+					
+					li{
+						padding: 6px 6px 6px 30px;
+						font-size: 14px;
+						font-weight: 500;
+						position: relative;
+						
+						&:after{
+							content: "\f00c";
+							font-family: 'Font Awesome 6 Free';
+							font-weight: 700;
+							font-size: 10px;
+							width: 18px;
+							height: 18px;
+							background: #C6CBD0;
+							display: block;
+							position: absolute;
+							left: 0;
+							color: #fff;
+							border-radius: 35px;
+							text-align: center;
+							top: 8px;
+							line-height: 18px;
+						}
+						&.active{
+							color: var(--bs-primary);
+							
+							&:after{
+								background-color: var(--bs-primary);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		@include respond ("phone-land"){
+			.left-box,
+			.right-box{
+				padding: 20px;
+			}
+		}
+		@include respond ("phone"){
+			.pricingtable-inner{
+				flex-direction: column;
+			}
+			.left-box,
+			.right-box{
+				width: 100%;
+			}
+			.right-box{
+			    border-left: 0;
+			    border-top: 1px solid rgba(0, 0, 0, 0.1);
+			}
+		}
+	}
+	
+	&.style-2{
+		padding: 30px;
+		position: relative;
+		z-index: 1;
+		border-radius: 15px;
+		background: var(--bs-light);
+		height: 100%;
+		
+		&:hover{
+		    transform: translateY(-10px);
+		}
+		.pricingtable-info{
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+		.vertical-text{
+			font-size: 16px;
+			line-height: 1.6;
+			border-radius: 0px 10px 10px 0px;
+			background: var(--bs-primary);
+			padding: 15px 5px;
+			position: absolute;
+			top: 20px;
+			writing-mode: tb-rl;
+			z-index: 1;
+			left: 0;
+			color: #fff;
+			font-weight: 500;
+		}
+		.dz-media{
+			width: 280px;
+			min-width: 280px;
+			z-index: 1;
+			display: flex;
+			align-self: flex-end;
+			margin-bottom: -30px;
+			margin-right: 30px;
+		}
+		.pricingtable-bx{
+			font-size: 45px;
+			font-weight: 600;
+			margin: -10px 0 10px;
+			color: var(--bs-heading-color);
+			line-height: 1.4;
+			
+			small{
+				font-size: 15px;
+				font-weight: 500;
+				color: var(--bs-body-color);
+				margin-left: 5px;
+				transform: translateY(-2px);
+				display: inline-block;
+			}
+		}
+		.pricingtable-title{
+			.title{
+				font-size: 18px;
+				font-weight: 600;
+				padding-bottom: 10px;
+				position: relative;
+				margin-bottom: 12px;
+				
+				&::after{
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 1px;
+					background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 50%, rgba(255, 255, 255, 0) 0%);
+					background-size: 10px 1px;
+					background-repeat: repeat-x;					}
+			}
+			.text{
+				margin-bottom: 0;
+				color: var(--bs-heading-color);
+			}
+		}
+		p{
+			font-size: 14px;
+			font-weight: 300;
+		}
+		.pricingtable-list{	
+			.list-title{
+				font-size: 18px;
+				font-weight: 700;
+				margin: 0;
+				color: var(--bs-heading-color);
+			}
+		}
+		.pricingtable-features{
+			text-align: $dz-pos-left;
+			list-style: none;
+			margin-bottom: 20px;
+			
+			li{
+				padding: 3px 0 3px 30px;
+				font-size: 15px;
+				font-weight: 500;
+				position: relative;
+				color: var(--bs-body-color);
+				
+				&:before{
+					content: "\f109";
+					font-family: flaticon;
+					color: var(--bs-primary);
+					font-size: 16px;
+					position: absolute;
+					left: 0;
+					top: 4px;
+					font-weight: 600;
+				}
+			}
+		}
+		.pricingtable-button{
+			margin-top: auto;
+		}
+		.pricingtable-inner{
+			display: flex;
+			height: 100%;
+		}
+		@media only screen and (max-width: 1380px){
+			.dz-media{
+				width: 240px;
+				min-width: 240px;
+			}
+		}
+		@include respond ("phone-land"){
+			padding: 60px 30px 30px;
+			
+			.dz-media{
+				display: none;
+			}
+			.vertical-text{
+				font-size: 14px;
+				border-radius: 0px 0 10px 10px;
+				padding: 8px 15px;
+				top: 0;
+				writing-mode: unset;
+				left: 30px;
+			}
+		}
+	}
+	
+	&.style-3{
+		border: 1px solid rgba(var(--bs-secondary-rgb), 0.05);
+		border-radius: var(--radius-xl);
+		margin-left: 0 !important;
+		transition: 0.5s;
+		
+		&:hover,
+		&.active{
+			background-color:rgba(var(--bs-primary-rgb), 0.04);
+		}
+		.pricing-content-box{
+			padding: 35px 30px;
+			border-bottom: 1px solid rgba(var(--bs-secondary-rgb), 0.05);
+			text-align: center;
+			min-height: 185px;
+			
+			@include respond ("phone"){
+				min-height: auto;				
+				padding: 25px;
+			}
+			.pricingtable-price{
+				.pricingtable-bx{
+					font-size: 40px;
+					margin-bottom: 25px;
+					line-height: 1;
+					
+					small{
+						font-size: 14px;
+						font-weight: 500;
+						color: var(--bs-body-color);
+						margin-left: 5px;
+						transform: translateY(-2px);
+						display: inline-block;
+					}
+				}
+			}
+			.pricingtable-button .btn{
+				font-size: 14px;
+				padding: 15px 25px;
+				font-weight: 500;
+			}
+		}
+		.pricingtable-list{
+			.pricingtable-features{
+				text-align: center;
+				
+				li{	
+					border-bottom: 1px solid rgba(var(--bs-secondary-rgb), 0.05);
+					padding: 25px 30px;
+					
+					@include respond ("phone"){
+						padding: 20px 25px;
+					}
+					&:last-child{
+						border: none;
+					}
+					&.disable{
+						svg,
+						img{
+							opacity: 0.1;
+						}
+					}
+				}
+			}
+		}
+
+		&.pricingtable-detail{
+			background-color: var(--bs-secondary);
+
+			.pricing-content-box{
+				text-align: start;
+				border-bottom: 1px solid rgba(var(--bs-primary-rgb), 0.07);
+				
+				.pricingtable-price{
+					.pricingtable-bx{
+						font-size: 24px;
+						color: #fff;
+						font-weight: 600;
+						display: flex;
+						align-items: center;
+						gap: 10px;
+						margin-bottom: 20px;
+					}
+					.badge{
+						color: var(--bs-primary);
+						font-size: 12px;
+						background-color: rgba(var(--bs-primary-rgb), 0.1);
+						border-radius: 50px;
+						padding: 7px 12px;
+						font-weight: 500;
+					}
+					.text{
+						font-size: 14px;
+						margin-bottom: 0;
+						color: #fff;
+						opacity: 0.5;
+						font-weight: 300;
+					}
+				}
+			}
+			.pricingtable-list{
+				.pricingtable-features{
+					text-align: start;
+					
+					li{
+						color: #fff;
+						border-bottom: 1px solid rgba(var(--bs-primary-rgb), 0.07);
+					}
+				}
+			}
+		}
+	}
+	
+	&.style-7{
+		position: relative;
+		z-index: 1;
+		border-radius: 15px;
+		background: #EDF6F6;
+		height: 100%;
+		transition: 0.4s;
+		overflow: unset;
+        
+        
+        .pricingtable-inner{
+		   display: flex;
+			height: 100%;
+			padding: 50px 30px 25px 30px;
+			overflow: hidden;
+			transition: 0.4s;
+			position: relative;
+            @include respond('tab-port'){
+                 padding:30px;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                top: -2%;
+                right: -100%;
+                background-image: url('data:image/svg+xml,<svg width="605" height="575" viewBox="0 0 605 575" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.1"><path fill-rule="evenodd" clip-rule="evenodd" d="M329.046 227.245H275.959L259.539 277.782L259.614 277.834L275.959 227.505H329.04L345.391 277.834L345.46 277.782L329.046 227.245ZM323.334 235.401L323.328 235.389H281.674L281.668 235.401H323.334ZM302.503 271.089L308.424 266.79L306.158 259.826H298.848L296.576 266.79L302.503 271.089ZM250.586 280.703L270.413 219.618H334.587L354.414 280.703L302.503 318.446L250.586 280.703Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M334.777 220H270.216L250.268 281.382L302.493 319.315L354.731 281.382L334.777 220ZM241.6 284.194L264.864 212.63H340.129L363.398 284.194L302.493 328.429L241.6 284.194Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M340.513 211.757H264.491L240.996 283.979L302.499 328.621L364.002 283.979L340.513 211.757ZM232.615 286.697L259.323 204.644H345.682L372.384 286.697L302.5 337.413L232.615 286.697Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M346.242 203.517H258.756L231.707 286.58L302.496 337.908L373.285 286.58L346.242 203.517ZM223.629 289.201L253.759 196.658H351.233L381.368 289.201L302.496 346.398L223.629 289.201Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M351.209 195.278H252.805L222.387 289.183L302.004 347.214L381.622 289.183L351.209 195.278ZM214.646 291.703L248.02 188.672H355.99L389.358 291.703L302.005 355.382L214.646 291.703Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M356.933 187.042H247.064L213.119 291.781L302.001 356.506L390.884 291.781L356.933 187.042ZM205.66 294.203L242.465 180.686H361.531L398.342 294.203L302.001 364.366L205.66 294.203Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M362.664 178.806H241.335L203.838 294.374L301.997 365.797L400.162 294.374L362.664 178.806ZM196.674 296.703L236.912 172.7H367.093L407.326 296.703L301.997 373.351L196.674 296.703Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M368.403 170.563H235.604L194.559 296.975L301.998 375.102L409.443 296.975L368.403 170.563ZM187.689 299.203L231.356 164.714H372.645L416.312 299.203L301.998 382.335L187.689 299.203Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M374.13 163.329H229.871L185.277 300.568L301.998 385.393L418.724 300.568L374.13 163.329ZM178.705 302.706L225.8 157.726H378.196L425.297 302.706L301.998 392.318L178.705 302.706Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M379.868 155.082H224.141L176.008 303.172L302.002 394.687L428.002 303.172L379.868 155.082ZM169.721 305.215L220.253 149.74H383.751L434.283 305.215L302.002 401.302L169.721 305.215Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M385.598 146.854H218.405L166.725 305.773L302.001 403.984L437.278 305.773L385.598 146.854ZM160.734 307.716L214.699 141.753H389.303L443.267 307.716L302.001 410.286L160.734 307.716Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M391.329 138.614H212.663L157.439 308.364L301.999 413.28L446.558 308.364L391.329 138.614ZM151.748 310.215L209.147 133.767H394.847L452.251 310.215L302 419.271L151.748 310.215Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M397.072 130.363H206.938L148.168 310.962L301.999 422.58L455.842 310.962L397.072 130.363ZM142.764 312.722L203.601 125.781H400.406L461.237 312.722L302 428.255L142.764 312.722Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M402.8 122.135H201.203L138.893 313.562L301.999 431.876L465.111 313.562L402.8 122.135ZM133.779 315.217L198.042 117.795H405.961L470.223 315.217L301.998 437.24L133.779 315.217Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M408.54 113.896H195.469L129.609 316.168L302.005 441.177L474.4 316.168L408.54 113.896ZM125.999 318.594L124.795 317.72L192.492 109.809H411.524L479.209 317.72L302.005 446.224L125.999 318.594Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M414.264 105.664H189.731L120.324 318.757L301.998 450.468L483.671 318.757L414.264 105.664ZM115.809 320.227L186.932 101.823H417.058L488.193 320.227L301.998 455.208L115.809 320.227Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M420.005 98.4148H183.994L111.045 322.359L302 460.759L492.954 322.359L420.005 98.4148ZM106.822 323.723L181.379 94.8351H422.62L497.177 323.723L302 465.191L106.822 323.723Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M425.936 90.1752H179.067L102.764 324.956L302.499 470.053L502.239 324.956L425.936 90.1752ZM98.8379 326.228L176.647 86.849H428.356L506.165 326.228L302.498 474.175L98.8379 326.228Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M431.668 81.9473H173.325L93.4727 327.549L302.496 479.348L511.526 327.549L431.668 81.9473ZM90.7541 329.39L89.8516 328.729L171.095 78.8628H433.911L515.149 328.729L302.497 483.16L90.7541 329.39Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M437.401 73.7039H167.599L84.207 330.149L302.5 488.644L520.799 330.149L437.401 73.7039ZM80.8652 331.229L165.54 70.8767H439.464L524.133 331.229L302.499 492.144L80.8652 331.229Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M530.082 332.753L443.141 65.4721H161.865L74.918 332.753L302.5 497.946L530.082 332.753ZM72.64 334.292L71.8809 333.74L159.691 63.7813L159.984 62.8906H445.015L533.118 333.74L303.259 500.583L302.5 501.128L72.64 334.292Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M448.877 57.2325H156.124L65.6406 335.344L302.504 507.235L539.361 335.344L448.877 57.2325ZM62.8965 336.239L154.433 54.9045H450.568L542.104 336.239L302.503 510.113L62.8965 336.239Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M454.607 48.9929H150.389L56.3516 337.952L302.501 516.535L548.645 337.952L454.607 48.9929ZM54.522 339.187L53.9121 338.75L148.64 47.6367L148.876 46.9185H456.126L550.854 338.032L551.09 338.75L302.501 519.097L54.522 339.187Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M460.346 41.7516H144.651L47.0703 341.541L302.495 526.822L557.926 341.541L460.346 41.7516ZM45.4609 342.627L44.9258 342.236L143.116 40.5625L143.329 39.9305H461.671L559.873 341.604L560.074 342.236L302.497 529.08L45.4609 342.627Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M567.192 344.144L466.077 33.5315H138.924L37.8027 344.144L302.498 536.118L567.192 344.144ZM36.4114 345.079L35.9395 344.74L137.601 32.496L137.78 31.9445H467.224L568.88 344.194L569.058 344.74L302.965 537.72L302.499 538.064L36.4114 345.079Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M471.816 25.2842H133.185L28.5156 346.739L302.498 545.416L576.479 346.739L471.816 25.2842ZM27.3407 347.533L26.9551 347.246L132.073 24.4237L132.217 23.9584H472.776L577.9 346.792L578.044 347.246L302.497 547.049L27.3407 347.533Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M585.763 349.341L477.551 17.0485H127.454L19.2363 349.341L302.5 554.702L585.763 349.341ZM18.2931 349.977L17.9707 349.742L126.551 16.3398L126.672 15.9722H478.335L586.909 349.374L587.03 349.742L302.823 555.797L302.5 556.033L18.2931 349.977Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M595.037 352.55L483.284 8.805H121.718L9.95898 352.55L302.495 564.993L595.037 352.55ZM9.23389 353.038L8.98633 352.865L121.12 7.98608H483.883L596.016 352.865L302.737 565.837L302.495 566.016L9.23389 353.038Z" fill="%2323281C"/><path fill-rule="evenodd" clip-rule="evenodd" d="M115.562 0L115.499 0.201407L0 355.363L0.172739 355.489L302.5 575L302.667 574.873L605 355.363L604.942 355.167L489.444 0H115.562ZM0.671875 355.144L115.986 0.569322H489.016L604.324 355.144L302.498 574.28L0.671875 355.144Z" fill="%2323281C"/></g></svg>');
+                width: 100%;
+                height: 100%;
+                transition: 0.4;
+            }
+		}
+
+       
+
+		.pricingtable-info{
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			.title{
+				font-weight: 700;
+				font-size: 30px;
+				font-family: var(--font-family-title);
+				text-transform: capitalize;
+			}
+		}
+		.vertical-text{
+            font-size: 12px;
+            line-height: normal;
+            border-radius: 8px;
+            background: #000;
+            padding: 7px 10px;
+            position: absolute;
+            top: -20px;
+            z-index: 1;
+            right: 30px;
+            color: #fff;
+            font-weight: 600;
+            opacity: 0;
+            transition: 0.4s;
+		}
+		
+		.pricingtable-bx{
+			font-size: 60px;
+			font-weight: 700;
+			margin: -10px 0 10px;
+			color: var(--bs-heading-color);
+			line-height: 1.4;
+			font-family: var(--font-family-title);
+			
+			small{
+				font-size: 16px;
+				font-weight: 500;
+			    color: var(--bs-heading-color);
+				margin-left: 5px;
+				transform: translateY(-2px);
+				display: inline-block;
+			}
+
+            @include respond("tab-port"){
+                font-size: 50px;
+            }
+		}
+		.pricingtable-title{
+			.title{
+				font-size: 20px;
+				font-weight: 700;
+                color: var(--bs-primary);
+				margin-bottom: 5px;
+            }
+			.text{
+                font-weight: 500;
+                font-size: 15px;
+				margin-bottom: 10px;
+				color: var(--bs-heading-color);
+			}
+		}
+        .text-2{
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--bs-heading-color);
+            border-bottom: 1px dashed #D9D9D9;
+            padding-bottom: 10px;
+        }
+		p{
+			font-size: 16px;
+			font-weight: 400;
+			color: #11516A;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			position: relative;
+  			  z-index: 1;
+			&:after {
+				    content: "";
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 100%;
+					background: linear-gradient(270deg, #FFFFFF 0%, #646363 50%, #FFFFFF 100%);
+					height: 1px;
+			}
+		}
+		.pricingtable-list{	
+            margin-top: 20px;
+			.list-title{
+				font-size: 18px;
+				font-weight: 700;
+				margin: 0;
+				color: var(--bs-heading-color);
+			}
+		}
+		.pricingtable-features{
+			text-align: $dz-pos-left;
+			list-style: none;
+			
+			li{
+				padding: 7px 0 7px 30px;
+				font-size: 18px;
+				font-weight: 500;
+				position: relative;
+				color: var(--bs-secondary);
+				text-transform: capitalize;
+				
+				&:before {
+					content: '';
+					font-family: "Font Awesome 6 Free";
+					font-weight: 600;
+					position: absolute;
+					height: 20px;
+					width: 20px;
+					border-radius: 50%;
+					background-image: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_7_17423)"><path d="M19.9433 8.06337C19.9186 7.96793 19.8755 7.87828 19.8162 7.79952C19.7569 7.72077 19.6827 7.65447 19.5978 7.60439C19.5129 7.55432 19.419 7.52146 19.3214 7.50768C19.2238 7.49391 19.1244 7.49949 19.029 7.52412C18.9336 7.54874 18.8439 7.59192 18.7652 7.65119C18.6864 7.71046 18.6201 7.78466 18.57 7.86956C18.52 7.95446 18.4871 8.04838 18.4733 8.14598C18.4596 8.24358 18.4651 8.34293 18.4898 8.43837C18.975 10.3172 18.7825 12.307 17.946 14.0579C17.1095 15.8089 15.6825 17.2089 13.9159 18.0119C12.1494 18.815 10.1563 18.9696 8.28704 18.4486C6.41778 17.9277 4.79197 16.7645 3.69541 15.1635C2.59885 13.5625 2.10172 11.6262 2.29141 9.69503C2.4811 7.76382 3.34547 5.96128 4.73258 4.60426C6.11968 3.24724 7.94074 2.4226 9.87565 2.2753C11.8106 2.128 13.7355 2.66747 15.312 3.79887C15.392 3.85639 15.4826 3.89758 15.5786 3.9201C15.6745 3.94261 15.7739 3.94601 15.8712 3.9301C15.9684 3.91418 16.0616 3.87927 16.1454 3.82735C16.2291 3.77543 16.3019 3.70752 16.3594 3.62749C16.4169 3.54747 16.4581 3.4569 16.4806 3.36095C16.5031 3.26501 16.5065 3.16557 16.4906 3.06831C16.4747 2.97105 16.4398 2.87788 16.3879 2.79412C16.3359 2.71035 16.268 2.63764 16.188 2.58012C14.4112 1.30383 12.2567 0.662225 10.0711 0.758467C7.88549 0.854709 5.79576 1.68321 4.13797 3.11074C2.48017 4.53826 1.35065 6.48185 0.931036 8.62895C0.511425 10.7761 0.826115 13.0019 1.8245 14.9485C2.82288 16.8951 4.44694 18.4494 6.4355 19.3614C8.42406 20.2734 10.6616 20.4902 12.7882 19.9767C14.9148 19.4633 16.8069 18.2496 18.1604 16.5307C19.5138 14.8119 20.2498 12.6878 20.25 10.5001C20.2504 9.67822 20.1473 8.85953 19.9433 8.06337Z" fill="%231DA8A3"/><path d="M6.27844 9.05333C6.11803 8.98919 5.9404 8.9824 5.77556 9.0341C5.61073 9.08579 5.46879 9.19281 5.37373 9.33707C5.27868 9.48132 5.23634 9.65397 5.25387 9.82583C5.2714 9.99769 5.34772 10.1582 5.46994 10.2803L9.21994 14.0303C9.36059 14.1709 9.55132 14.2499 9.75019 14.2499C9.94907 14.2499 10.1398 14.1709 10.2804 14.0303L18.5304 5.78033C18.6691 5.64772 18.7517 5.467 18.7612 5.27536C18.7707 5.08371 18.7063 4.89572 18.5814 4.75007C18.4565 4.60441 18.2805 4.51216 18.0897 4.49231C17.8989 4.47245 17.7077 4.5265 17.5554 4.64333L9.64369 10.3996L6.27844 9.05333Z" fill="%231DA8A3"/></g><defs><clipPath id="clip0_7_17423"><rect width="21" height="21" fill="white"/></clipPath></defs></svg>');
+					left: 0;
+					top: 8px;
+					text-align: center;
+				}
+				&.disabled{
+					&:before {
+						content: '';
+						font-family: "Font Awesome 6 Free";
+						font-weight: 600;
+						position: absolute;
+						height: 20px;
+						width: 20px;
+						border-radius: 50%;
+						background-image: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_16273_10582)"><path d="M20.263 2.99335C20.2238 2.91145 20.1541 2.8495 20.067 2.81905C19.9798 2.7879 19.8874 2.79315 19.8059 2.832C18.2151 3.59185 17.0454 4.2383 16.0133 4.92815C14.1285 6.1689 12.3302 7.5913 10.6656 9.15895C10.5848 9.23455 10.4742 9.26815 10.3639 9.24855C10.2547 9.22895 10.1616 9.15895 10.1123 9.05955C9.5638 7.95495 9.1592 6.7863 8.91035 5.58685C8.8085 5.0265 8.37695 4.84625 7.99825 4.91275C7.6157 4.9789 7.2706 5.2939 7.3623 5.84725C7.70845 7.41175 8.30275 8.92235 9.12455 10.3185C9.20435 10.4536 9.1844 10.6251 9.0759 10.7381C8.1806 11.674 7.30385 12.6841 6.4691 13.7404C6.14395 14.1979 6.3221 14.6459 6.64795 14.8811C6.97555 15.1187 7.4603 15.1488 7.80225 14.6819C8.1386 14.1849 8.5684 13.6018 9.0381 13.0061C9.28555 12.695 9.53545 12.3887 9.78885 12.0825C9.85535 12.0023 9.9544 11.9558 10.0587 11.9558H10.0622C10.1679 11.9568 10.2673 12.0058 10.3328 12.0884C10.6499 12.4881 11.0037 12.8885 11.3842 13.2795C12.1279 14.0141 13.026 14.6963 14.0484 15.3014C14.3564 15.4883 14.7473 15.4005 14.9419 15.1033C15.0399 14.9518 15.0704 14.7701 15.0263 14.5923C14.9818 14.4128 14.8642 14.2584 14.7036 14.1688C13.9756 13.6939 13.2322 13.1864 12.598 12.5228C12.4888 12.4314 12.2494 12.1826 12.1304 12.0349C11.801 11.6709 11.4857 11.2768 11.2067 10.8788C11.1119 10.7434 11.1245 10.5607 11.2368 10.4396C12.9172 8.63115 14.6987 7.03165 16.5323 5.68485C17.7689 4.75875 19.0845 4.0066 20.0918 3.455C20.0957 3.4529 20.0992 3.4508 20.1034 3.4487C20.2714 3.3647 20.3431 3.15995 20.263 2.99265V2.99335Z" fill="%231DA8A3"/><path d="M10.5029 0.548828C12.0376 0.548828 13.5086 0.889015 14.874 1.55859H14.875C14.9965 1.61874 15.0857 1.72507 15.126 1.85547H15.127C15.1578 1.95686 15.1567 2.06302 15.124 2.16211L15.0811 2.25781C14.9505 2.48751 14.6619 2.57361 14.4238 2.45605C13.021 1.76536 11.4395 1.45995 9.84473 1.57324C5.52378 1.88172 1.97406 5.36898 1.58984 9.68262C1.36228 12.2337 2.23467 14.7637 3.98047 16.623C5.7288 18.4838 8.20134 19.512 10.7422 19.4463C15.2802 19.3277 19.0969 15.694 19.4287 11.1748C19.5141 10.0137 19.3816 8.87774 19.0352 7.79785C18.9602 7.56392 19.0698 7.31545 19.2881 7.20605C19.4202 7.14003 19.5754 7.13458 19.7129 7.19336C19.7883 7.22554 19.9299 7.30888 19.9893 7.49512C20.2975 8.46308 20.4531 9.47397 20.4531 10.5C20.4531 13.2749 19.339 15.8512 17.3174 17.752C15.2959 19.6519 12.6472 20.6016 9.86816 20.4297C4.87808 20.1204 0.882414 16.1243 0.573242 11.1338C0.400738 8.35255 1.35175 5.70719 3.25098 3.68555C5.15141 1.66396 7.72778 0.548891 10.5029 0.548828Z" fill="%231DA8A3" stroke="%231DA8A3" stroke-width="0.3"/></g><defs><clipPath id="clip0_16273_10582"><rect width="21" height="21" fill="white"/></clipPath></defs></svg>');
+						left: 0;
+						top: 8px;
+						text-align: center;
+					}
+				}
+			}
+		}
+		.pricingtable-button{
+			margin-top: auto;
+
+            a{
+                font-weight: 500;
+            }
+		}
+		
+		&:hover{
+			background: var(--bs-primary);
+			.pricingtable-info{
+				.title,
+				.pricingtable-bx,
+				small,
+				.text-2,
+				.pricingtable-features li,
+				p{
+					color: #fff;
+				}
+				.btn.btn-primary {
+					background: #fff;
+					color: var(--bs-primary);
+					border-color: #fff;
+					&:hover{
+						color:var(--bs-primary) !important;
+					}
+				}
+				.pricingtable-features li:before {
+					background-image:url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_7_17488)"><path d="M19.9433 8.06337C19.9186 7.96793 19.8755 7.87828 19.8162 7.79952C19.7569 7.72077 19.6827 7.65447 19.5978 7.60439C19.5129 7.55432 19.419 7.52146 19.3214 7.50768C19.2238 7.49391 19.1244 7.49949 19.029 7.52412C18.9336 7.54874 18.8439 7.59192 18.7652 7.65119C18.6864 7.71046 18.6201 7.78466 18.57 7.86956C18.52 7.95446 18.4871 8.04838 18.4733 8.14598C18.4596 8.24358 18.4651 8.34293 18.4898 8.43837C18.975 10.3172 18.7825 12.307 17.946 14.0579C17.1095 15.8089 15.6825 17.2089 13.9159 18.0119C12.1494 18.815 10.1563 18.9696 8.28704 18.4486C6.41778 17.9277 4.79197 16.7645 3.69541 15.1635C2.59885 13.5625 2.10172 11.6262 2.29141 9.69503C2.4811 7.76382 3.34547 5.96128 4.73258 4.60426C6.11968 3.24724 7.94074 2.4226 9.87565 2.2753C11.8106 2.128 13.7355 2.66747 15.312 3.79887C15.392 3.85639 15.4826 3.89758 15.5786 3.9201C15.6745 3.94261 15.7739 3.94601 15.8712 3.9301C15.9684 3.91418 16.0616 3.87927 16.1454 3.82735C16.2291 3.77543 16.3019 3.70752 16.3594 3.62749C16.4169 3.54747 16.4581 3.4569 16.4806 3.36095C16.5031 3.26501 16.5065 3.16557 16.4906 3.06831C16.4747 2.97105 16.4398 2.87788 16.3879 2.79412C16.3359 2.71035 16.268 2.63764 16.188 2.58012C14.4112 1.30383 12.2567 0.662225 10.0711 0.758467C7.88549 0.854709 5.79576 1.68321 4.13797 3.11074C2.48017 4.53826 1.35065 6.48185 0.931036 8.62895C0.511425 10.7761 0.826115 13.0019 1.8245 14.9485C2.82288 16.8951 4.44694 18.4494 6.4355 19.3614C8.42406 20.2734 10.6616 20.4902 12.7882 19.9767C14.9148 19.4633 16.8069 18.2496 18.1604 16.5307C19.5138 14.8119 20.2498 12.6878 20.25 10.5001C20.2504 9.67822 20.1473 8.85953 19.9433 8.06337Z" fill="white"/><path d="M6.27844 9.05333C6.11803 8.98919 5.9404 8.9824 5.77556 9.0341C5.61073 9.08579 5.46879 9.19281 5.37373 9.33707C5.27868 9.48132 5.23634 9.65397 5.25387 9.82583C5.2714 9.99769 5.34772 10.1582 5.46994 10.2803L9.21994 14.0303C9.36059 14.1709 9.55132 14.2499 9.75019 14.2499C9.94907 14.2499 10.1398 14.1709 10.2804 14.0303L18.5304 5.78033C18.6691 5.64772 18.7517 5.467 18.7612 5.27536C18.7707 5.08371 18.7063 4.89572 18.5814 4.75007C18.4565 4.60441 18.2805 4.51216 18.0897 4.49231C17.8989 4.47245 17.7077 4.5265 17.5554 4.64333L9.64369 10.3996L6.27844 9.05333Z" fill="white"/></g><defs><clipPath id="clip0_7_17488"><rect width="21" height="21" fill="white"/></clipPath></defs></svg>')	;
+				}
+				.pricingtable-features li.disabled:before {
+					background-image: url('data:image/svg+xml,<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_16315_541)"><path d="M20.263 2.99335C20.2238 2.91145 20.1541 2.8495 20.067 2.81905C19.9798 2.7879 19.8874 2.79315 19.8059 2.832C18.2151 3.59185 17.0454 4.2383 16.0133 4.92815C14.1285 6.1689 12.3302 7.5913 10.6656 9.15895C10.5848 9.23455 10.4742 9.26815 10.3639 9.24855C10.2547 9.22895 10.1616 9.15895 10.1123 9.05955C9.5638 7.95495 9.1592 6.7863 8.91035 5.58685C8.8085 5.0265 8.37695 4.84625 7.99825 4.91275C7.6157 4.9789 7.2706 5.2939 7.3623 5.84725C7.70845 7.41175 8.30275 8.92235 9.12455 10.3185C9.20435 10.4536 9.1844 10.6251 9.0759 10.7381C8.1806 11.674 7.30385 12.6841 6.4691 13.7404C6.14395 14.1979 6.3221 14.6459 6.64795 14.8811C6.97555 15.1187 7.4603 15.1488 7.80225 14.6819C8.1386 14.1849 8.5684 13.6018 9.0381 13.0061C9.28555 12.695 9.53545 12.3887 9.78885 12.0825C9.85535 12.0023 9.9544 11.9558 10.0587 11.9558H10.0622C10.1679 11.9568 10.2673 12.0058 10.3328 12.0884C10.6499 12.4881 11.0037 12.8885 11.3842 13.2795C12.1279 14.0141 13.026 14.6963 14.0484 15.3014C14.3564 15.4883 14.7473 15.4005 14.9419 15.1033C15.0399 14.9518 15.0704 14.7701 15.0263 14.5923C14.9818 14.4128 14.8642 14.2584 14.7036 14.1688C13.9756 13.6939 13.2322 13.1864 12.598 12.5228C12.4888 12.4314 12.2494 12.1826 12.1304 12.0349C11.801 11.6709 11.4857 11.2768 11.2067 10.8788C11.1119 10.7434 11.1245 10.5607 11.2368 10.4396C12.9172 8.63115 14.6987 7.03165 16.5323 5.68485C17.7689 4.75875 19.0845 4.0066 20.0918 3.455C20.0957 3.4529 20.0992 3.4508 20.1034 3.4487C20.2714 3.3647 20.3431 3.15995 20.263 2.99265V2.99335Z" fill="white"/><path d="M10.5029 0.548828C12.0376 0.548828 13.5086 0.889015 14.874 1.55859H14.875C14.9965 1.61874 15.0857 1.72507 15.126 1.85547H15.127C15.1578 1.95686 15.1567 2.06301 15.124 2.16211L15.0811 2.25781C14.9505 2.48751 14.6619 2.57361 14.4238 2.45605C13.021 1.76536 11.4395 1.45995 9.84473 1.57324C5.52378 1.88172 1.97406 5.36898 1.58984 9.68262C1.36228 12.2337 2.23467 14.7637 3.98047 16.623C5.7288 18.4838 8.20134 19.512 10.7422 19.4463C15.2802 19.3277 19.0969 15.694 19.4287 11.1748C19.5141 10.0137 19.3816 8.87774 19.0352 7.79785C18.9602 7.56392 19.0698 7.31545 19.2881 7.20605C19.4202 7.14003 19.5754 7.13458 19.7129 7.19336C19.7883 7.22554 19.9299 7.30888 19.9893 7.49512C20.2975 8.46308 20.4531 9.47397 20.4531 10.5C20.4531 13.2748 19.339 15.8512 17.3174 17.752C15.2959 19.6519 12.6472 20.6016 9.86816 20.4297C4.87808 20.1204 0.882414 16.1243 0.573242 11.1338C0.400738 8.35255 1.35175 5.70719 3.25098 3.68555C5.15141 1.66396 7.72778 0.548891 10.5029 0.548828Z" fill="white" stroke="white" stroke-width="0.3"/></g><defs><clipPath id="clip0_16315_541"><rect width="21" height="21" fill="white"/></clipPath></defs></svg>');
+				}
+				p:after {
+					background: linear-gradient(270deg, var(--bs-primary) 0%, #fff 50%, var(--bs-primary) 100%);
+				}
+			}
+			
+		}
+
+	}
+}
+.pricingtable-content-wrapper{
+	.pricingtable-wrapper{
+		margin-left: -30px;
+	}
+	.content-bx{
+		margin: 0 30px 0 70px;
+	}
+	@include custommq ($max:1380px){
+		.content-bx{
+			margin: 0 30px 0 0;
+		}
+	}
+	@include respond ("tab-port"){
+		.pricingtable-wrapper{
+			margin-left: 0;
+		}
+		.content-bx{
+			margin: 0;
+		}
+	}
+}
+
+// toggle-tabs
+.toggle-tabs1{
+	align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    background-color: var(--bs-primary);
+    display: flex;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 200px;
+    background-size: 200%;
+    padding: 4px;
+    position: relative;
+    z-index: 1;
+	border-radius: 10px;
+	
+	@include respond('phone-land'){
+		height: 42px;
+		width: 180px;		
+	}
+	&:after{
+		content: "";
+		width: calc(50% - 4px);
+		display: block;
+		height: 42px;
+		background: #fff;
+		border-radius: 6px;
+		position: absolute;
+		left: 4px;
+		right: auto;
+		z-index: -1;
+		-webkit-transition: .2s ease-in-out;
+		-ms-transition: .2s ease-in-out;
+		transition: .2s ease-in-out;
+		
+		@include respond('phone-land'){
+			height: 34px;
+		}
+	}
+	.monthly{
+		color:#000;
+	}
+	&.monthly{
+		&:after{
+			left:4px;
+		}
+		.monthly{
+			color:#000;
+		}
+	}
+	&.yearly{
+		&:after{
+			left:50%;
+		}
+		.yearly{
+			color:#000;
+		}
+		.monthly{
+			color:#fff;
+		}
+	}
+	span{
+		font-size: 14px;
+		font-weight: 600;
+		width: 50%;
+		text-align: center;
+		color: #fff;
+		text-transform: uppercase;
+		@include transitionMedium;
+		height: 42px;
+		line-height: 42px;
+		cursor:pointer;
+		
+		@include respond('phone-land'){
+			height: 34px;
+			line-height: 34px;	
+			font-size: 13px;
+		}
+	}	
+
+	&.tabs-light{
+		background-color: rgba(var(--bs-primary-rgb), 0.1);
+		margin-left: unset;
+		margin-right: unset;
+		margin-bottom: 20px;
+		
+		&::after{
+			background: var(--bs-primary);
+		}
+		.monthly{
+			color:#fff;
+		}
+		&.monthly{
+			.monthly{
+				color:#fff;
+			}
+		}
+		&.yearly{
+			&:after{
+				left:50%;
+			}
+			.yearly{
+				color:#fff;
+			}
+			.monthly{
+				color:#000;
+			}
+		}
+		span{
+			color: #000;
+		}
+	}
+	
+}
+// toggle-tabs2
+.toggle-tabs2{
+	position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+	cursor: pointer;
+	
+	span{
+		font-size: 14px;
+	}
+	.toggle{
+		position: relative;
+		height: 20px;
+		width: 44px;
+		border-radius: 30px;
+		background-color: var(--bs-light);
+		
+		&::after{
+			content: "";
+			position: absolute;
+			border-radius: 30px;
+			background-color: var(--bs-primary);
+			height: 14px;
+			width: 14px;
+			top: 3px;
+			left: 4px;
+			@include transitionFast;
+		}
+	}
+	&.monthly .monthly{
+		color: var(--bs-primary);
+	}
+	&.yearly{
+		.yearly{
+			color: var(--bs-primary);
+		}
+		.toggle{
+			&::after{
+				left: 27px;
+			}
+		}
+	}
+}
